@@ -1,0 +1,227 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc; /* Light background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Make sure items are aligned at the top */
+    align-items: flex-start; /* Align items to the top */
+    min-height: 100vh;
+    flex-direction: column; /* Ensure content flows from top to bottom */
+}
+  main {
+    width: 80%; /* Adjust the width of the main content */
+    max-width: 800px; /* Set a max-width for responsiveness */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #00bcd4; /* Aqua */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; /* Ensure it's full width */
+    position: relative; /* Ensure it doesn't get hidden */
+}
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  /* Form Section Styles */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #00bcd4;
+  }
+  
+  form div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  form#bookForm{
+    text-align: left;
+  }
+  
+  form#searchBook {
+    text-align: left;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  #bookForm div.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  #bookForm div.checkbox-container label {
+    margin-right: 10px; /* Space between label and checkbox */
+    margin-bottom: 0;   /* Remove bottom margin to align with checkbox */
+    line-height: 1.2;   /* Ensure the label height matches the checkbox */
+  }
+  
+  #bookForm div.checkbox-container input[type="checkbox"] {
+    width: auto;   /* Ensure the checkbox doesn't take full width */
+    margin-left: 5px; /* Optional: Adds space after the checkbox */
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bcd4; /* Aqua */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  button#searchSubmit{
+    margin: 20px auto;
+    display: block;
+  }
+
+  button#bookFormSubmit{
+    margin: 20px auto;
+    display: block;
+  }
+  
+  button:hover {
+    background-color: #0097a7; /* Darker aqua */
+  }
+  
+  /* Incomplete and Complete Books List */
+  #incompleteBookList,
+  #completeBookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  [data-bookid] {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  [data-bookid]:hover {
+    transform: scale(1.05);
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 48%;
+    padding: 8px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-right: 4%;
+    margin-bottom: 5px;
+  }
+  
+  button:hover {
+    background-color: #0097a7;
+  }
+  
+  button:last-child {
+    margin-right: 0;
+  }
+  
+  /* Button Active States */
+  button[data-testid="bookItemIsCompleteButton"] {
+    background-color: #4caf50; /* Green */
+  }
+  
+  button[data-testid="bookItemIsCompleteButton"]:hover {
+    background-color: #388e3c;
+  }
+  
+  button[data-testid="bookItemDeleteButton"] {
+    background-color: #f44336; /* Red */
+  }
+  
+  button[data-testid="bookItemDeleteButton"]:hover {
+    background-color: #d32f2f;
+  }
+  
+  button[data-testid="bookItemEditButton"] {
+    background-color: #ff9800; /* Orange */
+  }
+  
+  button[data-testid="bookItemEditButton"]:hover {
+    background-color: #f57c00;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    form {
+      width: 100%;
+    }
+  
+    #incompleteBookList,
+    #completeBookList {
+      grid-template-columns: 1fr;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
